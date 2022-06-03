@@ -1,0 +1,14 @@
+{% extends "base.html.jinja" %}
+{% block content %}
+    <h2>{{product_id}}</h2>
+    <ul class="list-group">
+        {% for key, value in stats.items() %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{key}}
+                <span class="badge bg-primary rounded-pill">{{value}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <img src="/plots/{{product_id}}_recommendations.png" class="rounded float-start" alt="Rekomendacje">
+    <img src="/plots/{{product_id}}_stars.png" class="rounded float-start" alt="Oceny">
+{% endblock content %}
